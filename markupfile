@@ -1,0 +1,38 @@
+
+user {
+	userID integer pk increments
+	fullName varchar(255)
+	email varchar(255) unique
+	phoneNumber varchar(15)
+	createdAt timestamp
+}
+
+tweet {
+	tweetID integer pk increments
+	commentID integer
+	userID integer *> user.userID
+	content text
+	parrentTweetID integer > tweet.tweetID
+	commentedContent text
+	tweetedAt timestamp
+}
+
+follow {
+	followID integer pk increments
+	followerUserID integer *> user.userID
+	followedUserID integer *> user.userID
+}
+
+retweet {
+	retweetID integer pk increments
+	originalTweetID integer *> tweet.tweetID
+	userID integer *> user.userID
+}
+
+likes {
+	likeID integer pk increments
+	userID integer *> user.userID
+	tweetID integer *> tweet.tweetID
+	retweetID integer *> retweet.retweetID
+}
+
