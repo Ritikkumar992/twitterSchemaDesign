@@ -14,3 +14,55 @@
  <br/>
  
 ## 2. Tables and Relationships
+
+### Users Table:
+- **Columns**:
+  - `id`: Primary key, auto-incrementing integer
+  - `fullName`: User's full name.
+  - `email`: Unique email address of the user
+  - `phoneNumber`: Unique phone number of the user
+  - `createdAt`: Timestamp indicating user registration date
+
+### Tweets Table:
+- **Columns**:
+  - `tweetID`: Primary key, auto-incrementing integer
+  - `userID`: Foreign key referencing the `id` column in the `Users` table
+  - `parentTweetID`: References the `tweetID` of the parent tweet (if any)
+  - `commentID`: Identifier for tweet comments
+  - `content`: Text content of the tweet
+  - `commentedContent`: Text content of the commented tweet (if applicable)
+  - `createdAt`: Timestamp indicating tweet creation date
+
+### Follows Table:
+- **Columns**:
+  - `followID`: Primary key, auto-incrementing integer
+  - `followerUserID`: Foreign key referencing the `id` column in the `Users` table for the follower
+  - `followedUserID`: Foreign key referencing the `id` column in the `Users` table for the followed user
+  - `createdAt`: Timestamp indicating when the follow relationship was established
+
+### Retweets Table:
+- **Columns**:
+  - `retweetID`: Primary key, auto-incrementing integer
+  - `userID`: Foreign key referencing the `id` column in the `Users` table for the user who retweeted
+  - `parentTweetID`: Foreign key referencing the `tweetID` column in the `Tweets` table for the original tweet
+  - `createdAt`: Timestamp indicating when the retweet occurred
+
+<br/>
+
+### Likes Table:
+- **Columns**:
+  - `likeID`: Primary key, auto-incrementing integer
+  - `userID`: Foreign key referencing the `id` column in the `Users` table for the user who liked
+  - `tweetID`: Foreign key referencing the `tweetID` column in the `Tweets` table for the liked tweet
+  - `retweetID`: Foreign key referencing the `retweetID` column in the `Retweets` table for the liked retweet
+  - `createdAt`: Timestamp indicating when the like was registered
+
+## Relationships:
+- **Users and Tweets**:
+  - One-to-Many relationship where one user can have many tweets.
+- **Tweets and Follows**:
+  - Many-to-Many relationship where many users can follow many other users.
+- **Tweets and Retweets**:
+  - One-to-Many relationship where one tweet can be retweeted by many users.
+- **Tweets and Likes**:
+  - One-to-Many relationship where one tweet can be liked by many users.
