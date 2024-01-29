@@ -21,12 +21,14 @@ follow {
 	followID integer pk increments
 	followerUserID integer *> user.userID
 	followedUserID integer *> user.userID
+	createdAt integer
 }
 
 retweet {
 	retweetID integer pk increments
 	originalTweetID integer *> tweet.tweetID
 	userID integer *> user.userID
+	createdAt timestamp
 }
 
 likes {
@@ -34,5 +36,5 @@ likes {
 	userID integer *> user.userID
 	tweetID integer *> tweet.tweetID
 	retweetID integer *> retweet.retweetID
+	createdAt timestamp
 }
-
