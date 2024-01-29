@@ -1,8 +1,7 @@
 # Twitter Database Schema Design:🪢
 
 # Schema Design ScreenShort:📜
-<img src = "https://github.com/Ritikkumar992/twitterSchemaDesign/assets/75531808/127906a3-fbcb-45b4-b377-b6c49f975b23" height = 
-"380px " width = "800px">
+<img src = "https://github.com/Ritikkumar992/twitterSchemaDesign/assets/75531808/127906a3-fbcb-45b4-b377-b6c49f975b23" width = "900px">
 
 ## Requirements:
 1. Users can register with their name, email and phone number.
