@@ -1,6 +1,5 @@
 # Twitter Database Schema Design:🪢
 
-# Schema Design ScreenShort:📜
 <img src = "https://github.com/Ritikkumar992/twitterSchemaDesign/assets/75531808/ac28003f-cb47-4664-93f2-9625085020bf" width = "900px">
 
 ## Requirements:🕶️
