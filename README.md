@@ -3,7 +3,7 @@
 # Schema Design ScreenShort:📜
 <img src = "https://github.com/Ritikkumar992/twitterSchemaDesign/assets/75531808/ac28003f-cb47-4664-93f2-9625085020bf" width = "900px">
 
-## Requirements:
+## Requirements:🕶️
 1. Users can register with their name, email and phone number.
 2. Users can tweet any textual content
 3. Users can like another user’s tweet
@@ -13,7 +13,7 @@
 
  <br/>
  
-## 2. Tables and Relationships
+## 2. Tables and Attributes:🔆
 
 ### Users Table:
 - **Columns**:
@@ -56,13 +56,3 @@
   - `tweetID`: Foreign key referencing the `tweetID` column in the `Tweets` table for the liked tweet
   - `retweetID`: Foreign key referencing the `retweetID` column in the `Retweets` table for the liked retweet
   - `likedAt`: Timestamp indicating when the like was registered
-
-## Relationships:
-- **Users and Tweets**:
-  - One-to-Many relationship where one user can have many tweets.
-- **Tweets and Follows**:
-  - Many-to-Many relationship where many users can follow many other users.
-- **Tweets and Retweets**:
-  - One-to-Many relationship where one tweet can be retweeted by many users.
-- **Tweets and Likes**:
-  - One-to-Many relationship where one tweet can be liked by many users.
