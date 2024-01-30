@@ -12,7 +12,7 @@
 
  <br/>
  
-## 2. Tables and Attributes:🔆
+## Tables and Attributes:🔆
 
 ### Users Table:
 - **Columns**:
@@ -55,3 +55,17 @@
   - `tweetID`: Foreign key referencing the `tweetID` column in the `Tweets` table for the liked tweet
   - `retweetID`: Foreign key referencing the `retweetID` column in the `Retweets` table for the liked retweet
   - `likedAt`: Timestamp indicating when the like was registered
+  
+## Relationship:🔆
+- **User and Tweet**
+  - one - many relationship : where one user have multiple tweets.
+- **User and follow**
+  - one - many relationship : where one user can follow multiple users.
+- **Tweets and Follows**:
+  - Many-to-Many relationship where many users can follow many other users.
+- **Tweets and Retweets**:
+  - One-to-Many relationship where one tweet can be retweeted by many users.
+- **Tweets and Likes**:
+  - One-to-Many relationship where one tweet can be liked by many users.
+
+
